@@ -27,6 +27,7 @@ body {
     var(--wrapper-color),
     url("../images/background.jpg") no-repeat center/cover;
   min-height: 100vh;
+  padding: 30px;
 }
 
 /* Header  */
@@ -41,7 +42,7 @@ body {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .header .logo {
@@ -50,17 +51,18 @@ body {
   align-items: center;
 }
 
-.header div i {
-  margin-right: 5px;
+.header-right div i {
+  margin-right: 10px;
 }
 
 a {
-  text-decoration: none;
+  /* text-decoration: none; */
   color: #fff;
 }
 
 a:hover {
-  color: blue;
+  color: purple;
+  cursor: pointer;
 }
 
 /* Main Section  */
@@ -139,4 +141,39 @@ textarea {
 
 .text-container p {
   font-size: 18px;
+}
+
+/* Media Query  */
+@media (max-width: 768px) {
+  .header {
+    padding: 30px;
+  }
+
+  .header,
+  .header-right {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-content {
+    flex-direction: column-reverse;
+    justify-content: start;
+    margin: auto;
+    padding: 50px;
+  }
+
+  .main-content form,
+  .main-content .text-container {
+    width: 100%;
+  }
+
+  .text-container p {
+    display: none;
+  }
+}
+
+@media (max-height: 500px) {
+  .main-content {
+    margin: 0 auto;
+  }
 }
